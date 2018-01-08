@@ -1,0 +1,2 @@
+include ':app', ':usbSerialForAndroid'
+project(':usbSerialForAndroid').projectDir = new File(settingsDir, '../usb-serial-for-android/usbSerialForAndroid')

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">IR RemoCon</string>
+    <string name="action_learn">学習開始</string>
+    <string name="dialog_title_learning">学習中</string>
+    <string name="dialog_message_learning">リモコンを受光器に向けて、学習したいリモコンのボタンを押してください。</string>
+    <string name="dialog_title_learn_success">成功</string>
+    <string name="dialog_message_learn_success">コードの取得に成功しました。名前を付けて保存してください。</string>
+    <string name="dialog_title_delete_confirm">削除</string>
+    <string name="dialog_message_delete_confirm">指定のコードを削除します。よろしいですか？</string>
+    <string name="dialog_label_ir_code_name">IRコード名</string>
+    <string name="button_save">保存</string>
+</resources>
