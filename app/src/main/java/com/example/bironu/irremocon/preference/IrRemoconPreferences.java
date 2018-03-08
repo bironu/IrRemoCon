@@ -9,7 +9,7 @@ import com.example.bironu.irremocon.R;
 
 
 /**
- * Sipのアカウント設定
+ *
  */
 public class IrRemoconPreferences {
 
@@ -35,7 +35,8 @@ public class IrRemoconPreferences {
     public int getRtpPort()
     {
         synchronized (mLock) {
-//          return Integer.parseInt(mPref.getString(mRes.getString(R.string.pref_key_rtp_port), mRes.getString(R.string.pref_default_value_rtp_port)));
+//          return Integer.parseInt(mPref.getString(mRes.getString(R.string.pref_key_rtp_port),
+//              mRes.getString(R.string.pref_default_value_rtp_port)));
             return 0;
         }
     }

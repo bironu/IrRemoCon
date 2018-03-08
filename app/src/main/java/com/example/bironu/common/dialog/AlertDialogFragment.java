@@ -29,7 +29,8 @@ public class AlertDialogFragment extends DialogFragment {
     }
 
     public interface OnMultiItemClickListener {
-        void onItemClick(@NonNull AlertDialogFragment dialog, int which, boolean isChecked, @Nullable Bundle param);
+        void onItemClick(@NonNull AlertDialogFragment dialog, int which, boolean isChecked,
+                         @Nullable Bundle param);
     }
 
     public interface OnCancelListener {
@@ -41,7 +42,8 @@ public class AlertDialogFragment extends DialogFragment {
     }
 
     public interface OnKeyListener {
-        boolean onKey(@NonNull AlertDialogFragment dialog, int keyCode, @NonNull KeyEvent event, @Nullable Bundle param);
+        boolean onKey(@NonNull AlertDialogFragment dialog, int keyCode, @NonNull KeyEvent event,
+                      @Nullable Bundle param);
     }
 
     public interface ListAdapterDelegate {
@@ -143,7 +145,8 @@ public class AlertDialogFragment extends DialogFragment {
 
         public Builder setInverseBackgroundForced(boolean useInverseBackground)
         {
-            mArguments.putInt(ARG_INVERSE_BACKGROUND, useInverseBackground ? VALUE_TRUE : VALUE_FALSE);
+            mArguments.putInt(ARG_INVERSE_BACKGROUND,
+                              useInverseBackground ? VALUE_TRUE : VALUE_FALSE);
             return this;
         }
 
@@ -206,28 +209,32 @@ public class AlertDialogFragment extends DialogFragment {
         // List
         //
 
-        public <T extends Fragment & OnItemClickListener> Builder setItems(CharSequence[] items, T listener)
+        public <T extends Fragment & OnItemClickListener> Builder setItems(CharSequence[] items,
+                                                                           T listener)
         {
             mArguments.putCharSequenceArray(ARG_ITEMS, items);
             putArgument(ARG_ITEMS_LISTENER, listener);
             return this;
         }
 
-        public <T extends Fragment & OnItemClickListener> Builder setItems(int itemResId, T listener)
+        public <T extends Fragment & OnItemClickListener> Builder setItems(int itemResId,
+                                                                           T listener)
         {
             return setItems(mContext
                                     .getResources()
                                     .getTextArray(itemResId), listener);
         }
 
-        public <T extends Activity & OnItemClickListener> Builder setItems(CharSequence[] items, T listener)
+        public <T extends Activity & OnItemClickListener> Builder setItems(CharSequence[] items,
+                                                                           T listener)
         {
             mArguments.putCharSequenceArray(ARG_ITEMS, items);
             putArgument(ARG_ITEMS_LISTENER, listener);
             return this;
         }
 
-        public <T extends Activity & OnItemClickListener> Builder setItems(int itemResId, T listener)
+        public <T extends Activity & OnItemClickListener> Builder setItems(int itemResId,
+                                                                           T listener)
         {
             return setItems(mContext
                                     .getResources()
@@ -398,26 +405,30 @@ public class AlertDialogFragment extends DialogFragment {
         // NegativeButton
         //
 
-        public <T extends Fragment & OnItemClickListener> Builder setNegativeButton(CharSequence text, T listener)
+        public <T extends Fragment & OnItemClickListener> Builder setNegativeButton(
+                CharSequence text, T listener)
         {
             mArguments.putCharSequence(ARG_NEGATIVE_BUTTON, text);
             putArgument(ARG_NEGATIVE_BUTTON_LISTENER, listener);
             return this;
         }
 
-        public <T extends Fragment & OnItemClickListener> Builder setNegativeButton(int resId, T listener)
+        public <T extends Fragment & OnItemClickListener> Builder setNegativeButton(int resId,
+                                                                                    T listener)
         {
             return setNegativeButton(mContext.getText(resId), listener);
         }
 
-        public <T extends Activity & OnItemClickListener> Builder setNegativeButton(CharSequence text, T listener)
+        public <T extends Activity & OnItemClickListener> Builder setNegativeButton(
+                CharSequence text, T listener)
         {
             mArguments.putCharSequence(ARG_NEGATIVE_BUTTON, text);
             putArgument(ARG_NEGATIVE_BUTTON_LISTENER, listener);
             return this;
         }
 
-        public <T extends Activity & OnItemClickListener> Builder setNegativeButton(int resId, T listener)
+        public <T extends Activity & OnItemClickListener> Builder setNegativeButton(int resId,
+                                                                                    T listener)
         {
             return setNegativeButton(mContext.getText(resId), listener);
         }
@@ -438,26 +449,30 @@ public class AlertDialogFragment extends DialogFragment {
         // NeutralButton
         //
 
-        public <T extends Fragment & OnItemClickListener> Builder setNeutralButton(CharSequence text, T listener)
+        public <T extends Fragment & OnItemClickListener> Builder setNeutralButton(
+                CharSequence text, T listener)
         {
             mArguments.putCharSequence(ARG_NEUTRAL_BUTTON, text);
             putArgument(ARG_NEUTRAL_BUTTON_LISTENER, listener);
             return this;
         }
 
-        public <T extends Fragment & OnItemClickListener> Builder setNeutralButton(int resId, T listener)
+        public <T extends Fragment & OnItemClickListener> Builder setNeutralButton(int resId,
+                                                                                   T listener)
         {
             return setNeutralButton(mContext.getText(resId), listener);
         }
 
-        public <T extends Activity & OnItemClickListener> Builder setNeutralButton(CharSequence text, T listener)
+        public <T extends Activity & OnItemClickListener> Builder setNeutralButton(
+                CharSequence text, T listener)
         {
             mArguments.putCharSequence(ARG_NEUTRAL_BUTTON, text);
             putArgument(ARG_NEUTRAL_BUTTON_LISTENER, listener);
             return this;
         }
 
-        public <T extends Activity & OnItemClickListener> Builder setNeutralButton(int resId, T listener)
+        public <T extends Activity & OnItemClickListener> Builder setNeutralButton(int resId,
+                                                                                   T listener)
         {
             return setNeutralButton(mContext.getText(resId), listener);
         }
@@ -478,26 +493,30 @@ public class AlertDialogFragment extends DialogFragment {
         // PositiveButton
         //
 
-        public <T extends Fragment & OnItemClickListener> Builder setPositiveButton(CharSequence text, T listener)
+        public <T extends Fragment & OnItemClickListener> Builder setPositiveButton(
+                CharSequence text, T listener)
         {
             mArguments.putCharSequence(ARG_POSITIVE_BUTTON, text);
             putArgument(ARG_POSITIVE_BUTTON_LISTENER, listener);
             return this;
         }
 
-        public <T extends Fragment & OnItemClickListener> Builder setPositiveButton(int resId, T listener)
+        public <T extends Fragment & OnItemClickListener> Builder setPositiveButton(int resId,
+                                                                                    T listener)
         {
             return setPositiveButton(mContext.getText(resId), listener);
         }
 
-        public <T extends Activity & OnItemClickListener> Builder setPositiveButton(CharSequence text, T listener)
+        public <T extends Activity & OnItemClickListener> Builder setPositiveButton(
+                CharSequence text, T listener)
         {
             mArguments.putCharSequence(ARG_POSITIVE_BUTTON, text);
             putArgument(ARG_POSITIVE_BUTTON_LISTENER, listener);
             return this;
         }
 
-        public <T extends Activity & OnItemClickListener> Builder setPositiveButton(int resId, T listener)
+        public <T extends Activity & OnItemClickListener> Builder setPositiveButton(int resId,
+                                                                                    T listener)
         {
             return setPositiveButton(mContext.getText(resId), listener);
         }
@@ -692,7 +711,8 @@ public class AlertDialogFragment extends DialogFragment {
 
     private void setAdapter(AlertDialog.Builder builder)
     {
-        final ListAdapterDelegate delegate = findListenerByTag(ListAdapterDelegate.class, ARG_ADAPTER);
+        final ListAdapterDelegate delegate = findListenerByTag(ListAdapterDelegate.class,
+                                                               ARG_ADAPTER);
         if (delegate == null) {
             return;
         }
@@ -848,18 +868,24 @@ public class AlertDialogFragment extends DialogFragment {
             return;
         }
 
-        builder.setMultiChoiceItems(items, checked, new DialogInterface.OnMultiChoiceClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which, boolean isChecked)
-            {
-                final OnMultiItemClickListener listener =
-                        findListenerByTag(OnMultiItemClickListener.class, ARG_MULTI_CHOICE_LISTENER);
-                if (listener != null) {
-                    Bundle param = getArguments().getBundle(ARG_CUSTOM_PARAM);
-                    listener.onItemClick(AlertDialogFragment.this, which, isChecked, param);
-                }
-            }
-        });
+        builder.setMultiChoiceItems(items, checked,
+                                    new DialogInterface.OnMultiChoiceClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which,
+                                                            boolean isChecked)
+                                        {
+                                            final OnMultiItemClickListener listener =
+                                                    findListenerByTag(
+                                                            OnMultiItemClickListener.class,
+                                                            ARG_MULTI_CHOICE_LISTENER);
+                                            if (listener != null) {
+                                                Bundle param = getArguments().getBundle(
+                                                        ARG_CUSTOM_PARAM);
+                                                listener.onItemClick(AlertDialogFragment.this,
+                                                                     which, isChecked, param);
+                                            }
+                                        }
+                                    });
     }
 
     @TargetApi(11)

@@ -23,7 +23,8 @@ import kotlinx.android.synthetic.main.main_activity.*
 /**
  *
  */
-class MainActivity : Activity(), AlertDialogFragment.OnItemClickListener, AlertDialogFragment.OnCancelListener, SaveIrCodeDialog.OnSaveIrCodeListener {
+class MainActivity : Activity(), AlertDialogFragment.OnItemClickListener,
+                     AlertDialogFragment.OnCancelListener, SaveIrCodeDialog.OnSaveIrCodeListener {
     private var mPort: SerialPort? = null
     private var mController: MainController? = null
 

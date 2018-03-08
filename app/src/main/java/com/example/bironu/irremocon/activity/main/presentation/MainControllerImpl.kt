@@ -47,9 +47,9 @@ class MainControllerImpl(useCase: MainUseCase) : MainController {
                     }
                 }
             }
-            MainConstatnt.LEARNING_DIALOG_TAG -> {
+            MainConstatnt.LEARNING_DIALOG_TAG       -> {
             }
-            MainConstatnt.REGISTER_IR_CODE_DIALOG -> {
+            MainConstatnt.REGISTER_IR_CODE_DIALOG   -> {
             }
         }
     }
@@ -74,7 +74,8 @@ class MainControllerImpl(useCase: MainUseCase) : MainController {
         }
     }
 
-    override fun onItemLongClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long): Boolean {
+    override fun onItemLongClick(parent: AdapterView<*>?, view: View?, position: Int,
+                                 id: Long): Boolean {
         var result: Boolean = false
         if (parent != null) {
             val adapter = parent.adapter
@@ -97,7 +98,7 @@ class MainControllerImpl(useCase: MainUseCase) : MainController {
                 mUseCase.prepareLearnIrCode()
                 return true
             }
-            else -> return false
+            else              -> return false
         }
     }
 

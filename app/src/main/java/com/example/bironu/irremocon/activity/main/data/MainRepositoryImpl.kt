@@ -13,7 +13,8 @@ import org.jetbrains.annotations.Contract
 /**
  *
  */
-class MainRepositoryImpl(activity: MainActivity) : MainRepository, LoaderManager.LoaderCallbacks<Cursor> {
+class MainRepositoryImpl(activity: MainActivity) : MainRepository,
+                                                   LoaderManager.LoaderCallbacks<Cursor> {
     private val mActivity: MainActivity = activity
     private var mListener: ((Int, Cursor?) -> Unit)? = null
 
@@ -30,8 +31,10 @@ class MainRepositoryImpl(activity: MainActivity) : MainRepository, LoaderManager
     }
 
     override fun deleteIrCode(id: Long) {
-        Log.d("repository", "deleteIrCode " + ContentUris.withAppendedId(IrCodeTable.CONTENT_URI, id).toString())
-        mActivity.contentResolver.delete(ContentUris.withAppendedId(IrCodeTable.CONTENT_URI, id), null, null)
+        Log.d("repository",
+              "deleteIrCode " + ContentUris.withAppendedId(IrCodeTable.CONTENT_URI, id).toString())
+        mActivity.contentResolver.delete(ContentUris.withAppendedId(IrCodeTable.CONTENT_URI, id),
+                                         null, null)
     }
 
     override fun onLoaderReset(loader: Loader<Cursor>?) {
@@ -48,9 +51,13 @@ class MainRepositoryImpl(activity: MainActivity) : MainRepository, LoaderManager
 
     override fun onCreateLoader(id: Int, args: Bundle?): Loader<Cursor> {
         when (id) {
-            IrCodeTable.LOADER_ID -> return CursorLoader(mActivity, IrCodeTable.CONTENT_URI, null, null, null, null)
-            else -> throw IllegalArgumentException("unknown Loader ID : " + id)
+            IrCodeTable.LOADER_ID -> return CursorLoader(mActivity, IrCodeTable.CONTENT_URI, null,
+                                                         null, null, null)
+            else                  -> throw IllegalArgumentException("unknown Loader ID : " + id)
         }
     }
 
+    override fun getString(id: Int): String {
+        return mActivity.getString(id)
+    }
 }

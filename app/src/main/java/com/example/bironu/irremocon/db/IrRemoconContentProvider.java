@@ -45,7 +45,8 @@ public class IrRemoconContentProvider extends ContentProvider {
     }
 
     @Override
-    public Cursor query(@NonNull Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder)
+    public Cursor query(@NonNull Uri uri, String[] projection, String selection,
+                        String[] selectionArgs, String sortOrder)
     {
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
         switch (sUriMatcher.match(uri)) {
@@ -97,7 +98,8 @@ public class IrRemoconContentProvider extends ContentProvider {
     }
 
     @Override
-    public int update(@NonNull Uri uri, ContentValues values, String selection, String[] selectionArgs)
+    public int update(@NonNull Uri uri, ContentValues values, String selection,
+                      String[] selectionArgs)
     {
         SQLiteDatabase db = mDBHelper.getWritableDatabase();
         int count;
@@ -110,10 +112,11 @@ public class IrRemoconContentProvider extends ContentProvider {
                     .getPathSegments()
                     .get(1);
             count = db.update(IrCodeTable.TABLE_NAME, values, IrCodeTable._ID
-                    + "="
-                    + id
-                    + (!TextUtils.isEmpty(selection) ? " AND (" + selection
-                    + ')' : ""), selectionArgs);
+                                                              + "="
+                                                              + id
+                                                              + (!TextUtils.isEmpty(selection) ?
+                                                                 " AND (" + selection
+                                                                 + ')' : ""), selectionArgs);
             break;
         default:
             throw new IllegalArgumentException("Unknown URI " + uri);
@@ -138,10 +141,11 @@ public class IrRemoconContentProvider extends ContentProvider {
                     .getPathSegments()
                     .get(1);
             count = db.delete(IrCodeTable.TABLE_NAME, IrCodeTable._ID
-                    + "="
-                    + id
-                    + (!TextUtils.isEmpty(selection) ? " AND (" + selection
-                    + ')' : ""), selectionArgs);
+                                                      + "="
+                                                      + id
+                                                      + (!TextUtils.isEmpty(selection) ?
+                                                         " AND (" + selection
+                                                         + ')' : ""), selectionArgs);
             break;
         default:
             throw new IllegalArgumentException("Unknown URI " + uri);

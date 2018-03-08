@@ -10,4 +10,5 @@ interface MainRepository {
     fun requestCursorLoad(id: Int, listener: (Int, Cursor?) -> Unit)
     fun saveIrCode(name: String, code: String)
     fun deleteIrCode(id: Long)
+    fun getString(id: Int): String
 }

@@ -33,6 +33,7 @@ class MainPresenterImpl(activity: MainActivity) : MainPresenter {
                 .setCancelable(true)
                 .setTitle(R.string.dialog_title_learning)
                 .setMessage(R.string.dialog_message_learning)
+                .setOnCancelListener(mActivity)
                 .create()
         mProgressDialog!!.show(mActivity.fragmentManager, MainConstatnt.LEARNING_DIALOG_TAG)
     }
@@ -43,7 +44,8 @@ class MainPresenterImpl(activity: MainActivity) : MainPresenter {
     }
 
     override fun showRegisterIrCodeDialog(code: String) {
-        SaveIrCodeDialog.newInstance(code).show(mActivity.fragmentManager, MainConstatnt.REGISTER_IR_CODE_DIALOG)
+        SaveIrCodeDialog.newInstance(code).show(mActivity.fragmentManager,
+                                                MainConstatnt.REGISTER_IR_CODE_DIALOG)
     }
 
     override fun showDeleteConfirmDialog(id: Long) {

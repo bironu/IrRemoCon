@@ -21,8 +21,9 @@ class SerialPortImpl : SerialPort {
 
         // Open a connection to the first available driver.
         val driver = availableDrivers[0]
-        val connection = manager.openDevice(driver.device) ?: // You probably need to call UsbManager.requestPermission(driver.getDevice(), ..)
-                return
+        val connection = manager.openDevice(
+                driver.device) ?: // You probably need to call UsbManager.requestPermission(driver.getDevice(), ..)
+                         return
 
         // Read some data! Most have just one port (port 0).
         mPort = driver.ports[0]

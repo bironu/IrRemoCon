@@ -9,4 +9,7 @@
     <string name="dialog_message_delete_confirm">指定のコードを削除します。よろしいですか？</string>
     <string name="dialog_label_ir_code_name">IRコード名</string>
     <string name="button_save">保存</string>
+    <string name="message_success">success</string>
+    <string name="message_error">error</string>
+    <string name="message_timeout">timeout</string>
 </resources>
