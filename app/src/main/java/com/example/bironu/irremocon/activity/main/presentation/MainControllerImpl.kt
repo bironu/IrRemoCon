@@ -35,7 +35,7 @@ class MainControllerImpl(useCase: MainUseCase) : MainController {
         mUseCase.dispose()
     }
 
-    override fun onDialogItemClick(tag: String, which: Int, param: Bundle?) {
+    override fun onDialogItemClick(tag: String?, which: Int, param: Bundle?) {
         Log.d("controller", "onDialogItemClick $tag, $which, $param")
         when (tag) {
             MainConstatnt.DELETE_CONFIRM_DIALOG_TAG -> {
@@ -54,7 +54,7 @@ class MainControllerImpl(useCase: MainUseCase) : MainController {
         }
     }
 
-    override fun onDialogCancel(tag: String) {
+    override fun onDialogCancel(tag: String?) {
         when (tag) {
             MainConstatnt.LEARNING_DIALOG_TAG -> mUseCase.cancelLearnIrCode()
         }

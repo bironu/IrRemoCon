@@ -1,6 +1,5 @@
 package com.example.bironu.irremocon.activity.main
 
-import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import android.hardware.usb.UsbManager
@@ -8,6 +7,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import com.example.bironu.common.dialog.AlertDialogFragment
 import com.example.bironu.irremocon.R
 import com.example.bironu.irremocon.activity.main.data.MainRepositoryImpl
@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.main_activity.*
 /**
  *
  */
-class MainActivity : Activity(), AlertDialogFragment.OnItemClickListener, AlertDialogFragment.OnCancelListener, SaveIrCodeDialog.OnSaveIrCodeListener {
+class MainActivity : AppCompatActivity(), AlertDialogFragment.OnItemClickListener, AlertDialogFragment.OnCancelListener, SaveIrCodeDialog.OnSaveIrCodeListener {
     private var mPort: SerialPort? = null
     private var mController: MainController? = null
 
@@ -52,12 +52,12 @@ class MainActivity : Activity(), AlertDialogFragment.OnItemClickListener, AlertD
         this.ir_code_list.setOnItemLongClickListener(mController)
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         mController?.onSaveInstanceState(outState)
     }
 
-    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         mController?.onRestoreInstanceState(savedInstanceState)
     }
@@ -97,11 +97,11 @@ class MainActivity : Activity(), AlertDialogFragment.OnItemClickListener, AlertD
      */
 //    external fun stringFromJNI(): String
 
-    companion object {
-
-        // Used to load the 'native-lib' library on application startup.
-        init {
+//    companion object {
+//
+//        // Used to load the 'native-lib' library on application startup.
+//        init {
 //            System.loadLibrary("native-lib")
-        }
-    }
+//        }
+//    }
 }

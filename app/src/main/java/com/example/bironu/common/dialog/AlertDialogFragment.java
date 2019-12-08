@@ -8,16 +8,16 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
-import android.app.DialogFragment;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.ListAdapter;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 /**
  * {@link DialogFragment} like {@link AlertDialog.Builder}

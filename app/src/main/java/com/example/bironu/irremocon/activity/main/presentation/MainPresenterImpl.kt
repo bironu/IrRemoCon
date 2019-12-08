@@ -1,9 +1,7 @@
 package com.example.bironu.irremocon.activity.main.presentation
 
-import android.app.Activity
 import android.database.Cursor
 import android.os.Bundle
-import android.util.Log
 import android.widget.CursorAdapter
 import android.widget.Toast
 import com.example.bironu.common.dialog.AlertDialogFragment
@@ -34,7 +32,7 @@ class MainPresenterImpl(activity: MainActivity) : MainPresenter {
                 .setTitle(R.string.dialog_title_learning)
                 .setMessage(R.string.dialog_message_learning)
                 .create()
-        mProgressDialog!!.show(mActivity.fragmentManager, MainConstatnt.LEARNING_DIALOG_TAG)
+        mProgressDialog?.show(mActivity.supportFragmentManager, MainConstatnt.LEARNING_DIALOG_TAG)
     }
 
     override fun hideLearningDialog() {
@@ -43,7 +41,7 @@ class MainPresenterImpl(activity: MainActivity) : MainPresenter {
     }
 
     override fun showRegisterIrCodeDialog(code: String) {
-        SaveIrCodeDialog.newInstance(code).show(mActivity.fragmentManager, MainConstatnt.REGISTER_IR_CODE_DIALOG)
+        SaveIrCodeDialog.newInstance(code).show(mActivity.supportFragmentManager, MainConstatnt.REGISTER_IR_CODE_DIALOG)
     }
 
     override fun showDeleteConfirmDialog(id: Long) {
@@ -56,7 +54,7 @@ class MainPresenterImpl(activity: MainActivity) : MainPresenter {
                 .setNegativeButton(android.R.string.cancel, mActivity)
                 .setParam(param)
                 .create()
-                .show(mActivity.fragmentManager, MainConstatnt.DELETE_CONFIRM_DIALOG_TAG)
+                .show(mActivity.supportFragmentManager, MainConstatnt.DELETE_CONFIRM_DIALOG_TAG)
     }
 
     override fun showToast(result: String) {
